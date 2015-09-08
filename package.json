@@ -1,0 +1,15 @@
+{
+  "name": "basher",
+  "version": "0.1.0",
+  "description": "bash function wrapper",
+  "main": "main.js",
+  "dependencies": {
+    "exec-sync": "^0.1.6"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Mateo Gianolio",
+  "license": "MIT"
+}
