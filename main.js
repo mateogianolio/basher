@@ -1,6 +1,5 @@
 (function() {
   'use strict';
-
   var execSync = require('exec-sync');
 
   // basher({ function_name: <code> })
@@ -10,7 +9,7 @@
 
     // e.g. basher(<code>)
     if(typeof bindings === 'string')
-      return parse.bind(null, bindings);
+      return exec.bind(null, bindings);
     else if(typeof bindings !== 'object')
       throw new Error('unknown argument type');
 
@@ -19,12 +18,12 @@
         output;
 
     for(var name in bindings)
-      functions[name] = parse.bind(null, bindings[name]);
+      functions[name] = exec.bind(null, bindings[name]);
 
     return functions;
   };
 
-  function parse(binding) {
+  function exec(binding) {
     var args = Array.prototype.slice.call(arguments, 0),
         i = 1;
     while(binding.indexOf('{' + i + '}') !== -1)
